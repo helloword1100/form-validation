@@ -43,19 +43,30 @@ phone.addEventListener('keyup',function(){
         error_phone.innerHTML="Phone number is required";
         validphone=false;
     }
-    if(!phn.match(/^[0-9]{10}$/))
+    if(phn.length>0)
     {
-        error_phone.innerHTML="Phone number should be in digits (0-9)";
-        validphone=false;
-    }
+        if(!phn.match(/^[0-9]{11}$/))
+        {
+            error_phone.innerHTML="Phone number should be in digits (0-9)";
+            validphone=false;
+        }
+        else if(phn.length==11)
+        {
+            error_phone.innerHTML='<i class="fa-solid fa-check"></i>';
+            validphone=true;
+            }
+            else if(phn.length>11)
+            {
+                error_phone.innerHTML="Phone number should be in digits (0-9)";
+                validphone=false;
+            }
+        }
+    
    
-    if(phn.length!==10)
-    {
-        error_phone.innerHTML="Phone number cant be less then 10 digits";
-        validphone=false;
-    }
-    error_phone.innerHTML='<i class="fa-solid fa-check"></i>';
-    validphone=true;
+ 
+    
+  
+    
 
 })
 
@@ -82,8 +93,7 @@ email.addEventListener('keyup',function(){
        
     }
    
-    // error_email.innerHTML='<i class="fa-solid fa-check"></i>';
-    // validemail=true;
+   
 })
 
 
@@ -101,12 +111,20 @@ mytext.style.color='red';
 validmytext=false;
 
 }
-else if(left==0)
+else if(left==0 )
 {
   error_message.innerHTML='valid number of charachters';
   validmytext=true;
   error_message.style.color='black';
 mytext.style.color='black';
+}
+else if(left>0)
+{
+    error_message.innerHTML='valid number of charachters';
+    validmytext=true;
+    error_message.style.color='black';
+  mytext.style.color='black';
+  error_message.innerHTML=left+' '+'charachters left';
 }
 else{
     error_message.innerHTML=left+' '+'charachters left';
@@ -126,7 +144,7 @@ sbm.addEventListener('click',function(){
   sbm.innerHTML='invalid data'
  }
  else{
-  alert('submited')
+  alert('Successfully submited')
  }
 })
 
