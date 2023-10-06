@@ -141,7 +141,12 @@ sbm.addEventListener('click',function(){
   
  if(!(validuser &&validphone&&validemail&&validmytext))
  {
-  sbm.innerHTML='invalid data'
+    sbm.innerHTML='invalid data'
+    setTimeout(() => {
+        sbm.innerHTML='Submit Again' 
+    }, 1000);
+  
+
  }
  else{
   alert('Successfully submited')
