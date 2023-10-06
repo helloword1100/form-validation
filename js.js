@@ -19,15 +19,18 @@ username.addEventListener('keyup',function(){
   var usersname=username.value.trim();
   if(usersname.length==0)
   {
+    name_error.style.color='red';
     name_error.innerHTML='Name is required';
     validuser=false;
   }
    else if(!usersname.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/))
    {
+    name_error.style.color='red';
       name_error.innerHTML="Write full Name";
       validuser=false;
    }
    else{
+    name_error.style.color='green';
     name_error.innerHTML='<i class="fa-solid fa-check"></i>';
     validuser=true;
    }
@@ -40,6 +43,7 @@ phone.addEventListener('keyup',function(){
     var phn=phone.value.trim();
     if(phn.length==0)
     {
+        error_phone.style.color='red';
         error_phone.innerHTML="Phone number is required";
         validphone=false;
     }
@@ -47,16 +51,19 @@ phone.addEventListener('keyup',function(){
     {
         if(!phn.match(/^[0-9]{11}$/))
         {
+            error_phone.style.color='red';
             error_phone.innerHTML="Phone number should be in digits (0-9)";
             validphone=false;
         }
         else if(phn.length==11)
         {
+            error_phone.style.color='green';
             error_phone.innerHTML='<i class="fa-solid fa-check"></i>';
             validphone=true;
             }
             else if(phn.length>11)
             {
+                error_phone.style.color='red';
                 error_phone.innerHTML="Phone number should be in digits (0-9)";
                 validphone=false;
             }
@@ -75,6 +82,7 @@ email.addEventListener('keyup',function(){
     var mail=email.value.trim();
     if(mail.length==0)
     {
+        error_email.style.color='red';
         error_email.innerHTML="Email required";
         validemail=false;
    
@@ -83,10 +91,12 @@ email.addEventListener('keyup',function(){
     {
         if(!mail.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/))
         {
+            error_email.style.color='red';
             error_email.innerHTML="Invalid Email";
             validemail=false;
         }
         else{
+            error_email.style.color='green';
           error_email.innerHTML='<i class="fa-solid fa-check"></i>';
     validemail=true;
         }
@@ -115,21 +125,21 @@ else if(left==0 )
 {
   error_message.innerHTML='valid number of charachters';
   validmytext=true;
-  error_message.style.color='black';
-mytext.style.color='black';
+  error_message.style.color='green';
+mytext.style.color='green';
 }
 else if(left>0)
 {
     error_message.innerHTML='valid number of charachters';
     validmytext=true;
-    error_message.style.color='black';
-  mytext.style.color='black';
+    error_message.style.color='green';
+  mytext.style.color='green';
   error_message.innerHTML=left+' '+'charachters left';
 }
 else{
     error_message.innerHTML=left+' '+'charachters left';
-error_message.style.color='black';
-mytext.style.color='black';
+error_message.style.color='green';
+mytext.style.color='green';
 
 
 }
@@ -142,13 +152,18 @@ sbm.addEventListener('click',function(){
  if(!(validuser &&validphone&&validemail&&validmytext))
  {
     sbm.innerHTML='invalid data'
+    sbm.style.color='red';
     setTimeout(() => {
         sbm.innerHTML='Submit Again' 
+        sbm.style.color='red';
     }, 1000);
   
 
  }
  else{
+    sbm.style.color='black';
+    sbm.innerHTML='Successfully submited'
+
   alert('Successfully submited')
  }
 })
