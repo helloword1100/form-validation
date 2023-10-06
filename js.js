@@ -163,7 +163,18 @@ sbm.addEventListener('click',function(){
  else{
     sbm.style.color='black';
     sbm.innerHTML='Successfully submited'
-
+   setTimeout(() => {
+    sbm.innerHTML='Submit'
+    username.value='';
+    email.value='';
+    name_error.innerHTML='';
+    phone.value='';
+    error_phone.innerHTML='';
+    mytext.value='';
+    error_email.innerHTML='';
+    error_message.innerHTML='';
+   }, 3000);
+   
   alert('Successfully submited')
  }
 })
