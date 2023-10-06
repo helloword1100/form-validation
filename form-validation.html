@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="js.js"></script>
+    <script src="https://kit.fontawesome.com/6087ec93d3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="main-form">
+        <div class="sender-logo"><i class="fa-solid fa-paper-plane"></i>
+        </div>
+        <div class="username">Full Name <input type="text" placeholder="input full name" id="username">
+            <p id="error-name"></p>
+        </div>
+        <div class="email"> email id <input type="text" placeholder="input email id" id="email">
+            <p id="error-email"></p>
+        </div>
+        <div class="phone">phone number <input type="text" placeholder="input phone number" id="phone">
+            <p id="error-phone"></p>
+        </div>
+        <div class="message">Your message <textarea id="mymessage" cols="25" rows="7"></textarea>
+            <p id="error-message"></p>
+        </div>
+        <div class="submit"><button id="submit">Submit</button></div>
+    </div>
+</body>
+
+</html>
